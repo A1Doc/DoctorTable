@@ -1,0 +1,28 @@
+#firsth1{
+	color: red
+}
+
+.myHeading{
+	color: blue
+}
+
+.myDiv{
+	height: 50px;
+	width: 50px;
+	background-color: aqua;
+	padding: 20px;
+	margin: 30px;
+}
+
+#btn{
+	margin: 5px;
+	background:radial-gradient(#FF0000,#660000);
+	color: white;
+	box-shadow: none;
+	border: 1px solid #660000;
+}
+
+.subtext{
+	color: gray;
+	font-size: 12px;
+}

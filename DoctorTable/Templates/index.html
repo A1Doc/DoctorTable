@@ -1,0 +1,68 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Doctor Table</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/style.css' %}"
+    />
+
+    <!-- jquery ui css files -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'jqueryui/jquery-ui.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'jqueryui/jquery-ui.structure.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'jqueryui/jquery-ui.theme.css' %}"
+    />
+  </head>
+  <body>
+    <div>
+      <form
+        id="myForm"
+        method="POST"
+        enctype="multipart/form-data"
+        action="simple_upload"
+      >
+        {% csrf_token %}
+        <label for="myfile">Select a file:</label>
+        <input type="file" id="myfile" name="myfile" /><br />
+        <span id="fileDesc"></span>
+
+        <a
+          id="btn"
+          class="myButtons ui-button ui-corner-all ui-widget"
+          role="button"
+          aria-pressed="true"
+          onclick="document.getElementById('myForm').submit()"
+          >Upload</a
+        >
+        <br />
+        <span class="subtext">Supported Types: pdf</span>
+      </form>
+      {% if uploaded_file_url %}
+      <p>
+        File uploaded
+      </p>
+      {% endif %}
+    </div>
+
+    <script src="{% static 'js/jquery.js' %}" type="text/javascript"></script>
+    <script
+      src="{% static 'jqueryui/jquery-ui.js' %}"
+      type="text/javascript"
+    ></script>
+
+    <script src="{% static 'js/main.js' %}" type="text/javascript"></script>
+  </body>
+</html>
